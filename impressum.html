@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Finavio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #000; }
+
+    .finavio-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+      z-index: 1000; padding: 1.5rem 4rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .finavio-header nav {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .finavio-header .fv-logo { display: flex; align-items: center; text-decoration: none; }
+    .finavio-header .fv-logo-icon { height: 40px; width: auto; }
+    .finavio-header .fv-nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .finavio-header .fv-nav-links a {
+      color: #000; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      transition: color 0.3s; position: relative;
+    }
+    .finavio-header .fv-nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #0E4F12; transition: width 0.3s;
+    }
+    .finavio-header .fv-nav-links a:hover::after { width: 100%; }
+    .finavio-header .fv-cta-nav {
+      background: #0E4F12 !important; color: #fff !important;
+      padding: 0.75rem 1.75rem; border-radius: 50px; font-weight: 600;
+      transition: all 0.3s; box-shadow: 0 4px 15px rgba(14,79,18,0.2);
+    }
+    .finavio-header .fv-cta-nav::after { display: none !important; }
+    .finavio-header .fv-cta-nav:hover { background: #0a3d0e !important; transform: translateY(-2px); }
+
+    .impressum-page { max-width: 780px; margin: 0 auto; padding: 140px 24px 100px; }
+    .impressum-page .page-label {
+      display: inline-block; background: rgba(14,79,18,0.08); color: #0E4F12;
+      padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem;
+      font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.05em;
+    }
+    .impressum-page h1 {
+      font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: #000; margin-bottom: 0.5rem; line-height: 1.15;
+    }
+    .impressum-page .last-updated {
+      font-size: 0.9rem; color: #888; margin-bottom: 3rem;
+      padding-bottom: 2rem; border-bottom: 1px solid #eee;
+    }
+    .impressum-page section { margin-bottom: 2.5rem; }
+    .impressum-page h2 {
+      font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 700;
+      color: #000; margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid #0E4F12; display: inline-block;
+    }
+    .impressum-page p { font-size: 0.97rem; color: #333; line-height: 1.8; }
+    .impressum-page a { color: #0E4F12; text-decoration: none; font-weight: 500; }
+    .impressum-page a:hover { text-decoration: underline; }
+    .impressum-page .hinweis-box {
+      background: rgba(14,79,18,0.06); border-left: 4px solid #0E4F12;
+      border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin-top: 1rem;
+    }
+    .impressum-page .hinweis-box p { color: #1a3d1c; font-size: 0.95rem; }
+
+    .mini-footer {
+      text-align: center; padding: 2rem 24px 3rem;
+      font-size: 0.85rem; color: #aaa; border-top: 1px solid #eee;
+    }
+    .mini-footer a { color: #0E4F12; text-decoration: none; margin: 0 0.5rem; }
+
+    @media (max-width: 640px) {
+      .finavio-header { padding: 1rem 1.5rem; }
+      .finavio-header .fv-nav-links { display: none; }
+      .impressum-page { padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="finavio-header">
+  <nav>
+    <a href="start.html" class="fv-logo">
+      <img src="Logoguen.png" alt="Finavio" class="fv-logo-icon">
+    </a>
+    <ul class="fv-nav-links">
+      <li><a href="start.html">Home</a></li>
+      <li><a href="start.html#ergebnisse-v3">Beispiele</a></li>
+      <li><a href="start.html#zert-v1">Zertifizierung</a></li>
+      <li><a href="start.html#fbew">Bewertungen</a></li>
+      <li>
+        <a href="#" data-fv-lead class="fv-cta-nav">
+          Experten kostenfrei anfragen →
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="impressum-page">
+  <span class="page-label">Rechtliches</span>
+  <h1>Impressum</h1>
+  <p class="last-updated">Stand: Mai 2026 · Anbieterkennzeichnung gemäß § 5 TMG</p>
+
+  <section>
+    <h2>Anbieter</h2>
+    <p>
+      LIONS PERFORMANCE DIGITAL LLC<br>
+      23160 Fashion Dr, Ste 220<br>
+      Estero, FL 33928<br>
+      Vereinigte Staaten von Amerika
+    </p>
+    <div class="hinweis-box" style="margin-top:1rem;">
+      <p>
+        <strong>Finavio</strong> ist eine Marke der LIONS PERFORMANCE DIGITAL LLC und wird ausschließlich zur Lead-Generierung im DACH-Raum genutzt. Sämtliche operative Tätigkeiten erfolgen über die LIONS PERFORMANCE DIGITAL LLC mit Sitz in Florida, USA.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vertretungsberechtigt</h2>
+    <p>
+      Stefan Michalea (Managing Member)
+    </p>
+  </section>
+
+  <section>
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+4915792500856">+49 (0) 1579 2500856</a><br>
+      E-Mail: <a href="mailto:info@finaviofinance.com">info@finaviofinance.com</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Eintragung im Handelsregister</h2>
+    <p>
+      Registereintrag: Florida Department of State, Division of Corporations<br>
+      Filing Number: L26000182038<br>
+      Rechtsform: Limited Liability Company (LLC) nach dem Recht des Bundesstaates Florida, USA
+    </p>
+  </section>
+
+  <section>
+    <h2>Umsatzsteuer-Identifikationsnummer</h2>
+    <p>
+      Eine Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz liegt nicht vor.
+    </p>
+  </section>
+
+  <section>
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      Stefan Michalea<br>
+      LIONS PERFORMANCE DIGITAL LLC<br>
+      23160 Fashion Dr, Ste 220, Estero, FL 33928, USA
+    </p>
+  </section>
+
+  <section>
+    <h2>Hinweis zur Tätigkeit von Finavio</h2>
+    <div class="hinweis-box">
+      <p>
+        Finavio ist kein Finanzdienstleister, Versicherungsvermittler oder Anlageberater im Sinne des KWG oder der GewO. Finavio vermittelt <strong>keine direkten Finanzprodukte</strong> und tritt nicht als Vertragspartner bei Finanzentscheidungen auf. Die Tätigkeit von Finavio beschränkt sich ausschließlich auf die <strong>Vermittlung von Kontaktdaten</strong> an geprüfte Finanzexperten und Partnerunternehmen aus dem Finavio-Netzwerk. Jede weiterführende Beratung, Empfehlung oder Produktvermittlung erfolgt ausschließlich durch den jeweiligen Experten oder das jeweilige Partnerunternehmen in eigener Verantwortung.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>EU-Streitschlichtung</h2>
+    <p>
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+      Unsere E-Mail-Adresse: <a href="mailto:info@finaviofinance.com">info@finaviofinance.com</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+    <p>
+      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+    </p>
+    <p>
+      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+    </p>
+    <p>
+      Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+    </p>
+    <p>
+      Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+    </p>
+  </section>
+</main>
+
+<footer class="mini-footer">
+  © 2026 LIONS PERFORMANCE DIGITAL LLC · 23160 Fashion Dr, Ste 220 · Estero, FL 33928 · USA &nbsp;|&nbsp;
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <a href="#" data-fv-consent-open>Cookie-Einstellungen</a>
+  <a href="start.html">← Zurück zur Startseite</a>
+</footer>
+
+<script src="lead-modal.js"></script>
+<script src="consent.js"></script>
+</body>
+</html>

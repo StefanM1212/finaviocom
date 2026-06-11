@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz – Finavio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #000; }
+
+    .finavio-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+      z-index: 1000; padding: 1.5rem 4rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .finavio-header nav {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .finavio-header .fv-logo { display: flex; align-items: center; text-decoration: none; }
+    .finavio-header .fv-logo-icon { height: 40px; width: auto; }
+    .finavio-header .fv-nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .finavio-header .fv-nav-links a {
+      color: #000; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      transition: color 0.3s; position: relative;
+    }
+    .finavio-header .fv-nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #0E4F12; transition: width 0.3s;
+    }
+    .finavio-header .fv-nav-links a:hover::after { width: 100%; }
+    .finavio-header .fv-cta-nav {
+      background: #0E4F12 !important; color: #fff !important;
+      padding: 0.75rem 1.75rem; border-radius: 50px; font-weight: 600;
+      transition: all 0.3s; box-shadow: 0 4px 15px rgba(14,79,18,0.2);
+    }
+    .finavio-header .fv-cta-nav::after { display: none !important; }
+    .finavio-header .fv-cta-nav:hover { background: #0a3d0e !important; transform: translateY(-2px); }
+
+    .datenschutz-page { max-width: 780px; margin: 0 auto; padding: 140px 24px 100px; }
+    .datenschutz-page .page-label {
+      display: inline-block; background: rgba(14,79,18,0.08); color: #0E4F12;
+      padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem;
+      font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.05em;
+    }
+    .datenschutz-page h1 {
+      font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: #000; margin-bottom: 0.5rem; line-height: 1.15;
+    }
+    .datenschutz-page .last-updated {
+      font-size: 0.9rem; color: #888; margin-bottom: 3rem;
+      padding-bottom: 2rem; border-bottom: 1px solid #eee;
+    }
+    .datenschutz-page section { margin-bottom: 2.5rem; }
+    .datenschutz-page h2 {
+      font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 700;
+      color: #000; margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid #0E4F12; display: inline-block;
+    }
+    .datenschutz-page p { font-size: 0.97rem; color: #333; line-height: 1.8; margin-bottom: 0.75rem; }
+    .datenschutz-page ul {
+      margin: 0.5rem 0 0.75rem 1.5rem; color: #333;
+      font-size: 0.97rem; line-height: 1.8;
+    }
+    .datenschutz-page a { color: #0E4F12; text-decoration: none; font-weight: 500; }
+    .datenschutz-page a:hover { text-decoration: underline; }
+
+    .datenschutz-page .hinweis-box {
+      background: rgba(14,79,18,0.06); border-left: 4px solid #0E4F12;
+      border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1rem 0;
+    }
+    .datenschutz-page .hinweis-box p { color: #1a3d1c; font-size: 0.95rem; margin-bottom: 0; }
+
+    .datenschutz-page .warning-box {
+      background: rgba(187,0,0,0.05); border-left: 4px solid #BB0000;
+      border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1rem 0;
+    }
+    .datenschutz-page .warning-box p { color: #5a0000; font-size: 0.95rem; margin-bottom: 0; }
+
+    /* Tool-Tabelle */
+    .datenschutz-page .tool-card {
+      border: 1px solid #eee; border-radius: 12px;
+      padding: 1.1rem 1.4rem; margin-bottom: 1rem;
+      background: #fafafa;
+    }
+    .datenschutz-page .tool-card strong {
+      display: block; font-size: 1rem; color: #000; margin-bottom: 0.3rem;
+    }
+    .datenschutz-page .tool-card p { font-size: 0.92rem; margin-bottom: 0; color: #555; }
+
+    .mini-footer {
+      text-align: center; padding: 2rem 24px 3rem;
+      font-size: 0.85rem; color: #aaa; border-top: 1px solid #eee;
+    }
+    .mini-footer a { color: #0E4F12; text-decoration: none; margin: 0 0.5rem; }
+
+    @media (max-width: 640px) {
+      .finavio-header { padding: 1rem 1.5rem; }
+      .finavio-header .fv-nav-links { display: none; }
+      .datenschutz-page { padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="finavio-header">
+  <nav>
+    <a href="start.html" class="fv-logo">
+      <img src="Logoguen.png" alt="Finavio" class="fv-logo-icon">
+    </a>
+    <ul class="fv-nav-links">
+      <li><a href="start.html">Home</a></li>
+      <li><a href="start.html#ergebnisse-v3">Beispiele</a></li>
+      <li><a href="start.html#zert-v1">Zertifizierung</a></li>
+      <li><a href="start.html#fbew">Bewertungen</a></li>
+      <li>
+        <a href="#" data-fv-lead class="fv-cta-nav">
+          Experten kostenfrei anfragen →
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="datenschutz-page">
+
+  <span class="page-label">Rechtliches</span>
+  <h1>Datenschutzerklärung</h1>
+  <p class="last-updated">Stand: Mai 2026 · Verantwortlicher: LIONS PERFORMANCE DIGITAL LLC (Marke „Finavio")</p>
+
+  <section>
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      LIONS PERFORMANCE DIGITAL LLC<br>
+      vertreten durch Stefan Michalea (Managing Member)<br>
+      23160 Fashion Dr, Ste 220<br>
+      Estero, FL 33928 · Vereinigte Staaten von Amerika<br>
+      E-Mail: <a href="mailto:info@finaviofinance.com">info@finaviofinance.com</a><br>
+      Telefon: <a href="tel:+4915792500856">+49 (0) 1579 2500856</a>
+    </p>
+    <div class="hinweis-box" style="margin-top:1rem;">
+      <p>
+        <strong>Finavio</strong> ist eine Marke der LIONS PERFORMANCE DIGITAL LLC und wird ausschließlich zur Lead-Generierung im DACH-Raum genutzt. Verantwortliche Stelle im Sinne der DSGVO sowie sonstiger datenschutzrechtlicher Bestimmungen ist die LIONS PERFORMANCE DIGITAL LLC.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Grundsätze der Datenverarbeitung</h2>
+    <p>
+      Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung unserer Dienstleistung erforderlich ist oder eine gesetzliche Grundlage nach Art. 6 DSGVO vorliegt. Im Folgenden informieren wir dich transparent darüber, welche Daten wir erheben, wie wir sie verarbeiten und an wen wir sie weitergeben.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Wichtiger Hinweis: Eintragung &amp; Weitergabe deiner Daten an Dritte</h2>
+    <div class="warning-box">
+      <p>
+        <strong>Die Kernleistung von Finavio ist die Echtzeit-Vermittlung deiner Kontaktdaten an mehrere geprüfte Partnerunternehmen.</strong> Wenn du dich über unser Online-Anfrageformular auf dieser Website (finaviofinance.com) einträgst, gibst du ausdrücklich deine Einwilligung gemäß Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO sowie § 7 Abs.&nbsp;2 Nr.&nbsp;2 UWG, dass:
+      </p>
+      <ul style="margin-top:.5rem;">
+        <li>deine übermittelten Daten (Name, Telefonnummer, E-Mail-Adresse sowie von dir angegebene Angaben zu deiner finanziellen Situation) in <strong>Echtzeit an mehrere Finanzexperten und Partnerunternehmen</strong> aus dem Finavio-Netzwerk weitergegeben werden,</li>
+        <li>diese Partnerunternehmen dich <strong>telefonisch sowie per E-Mail</strong> kontaktieren dürfen, um dir ein individuelles Beratungsangebot zu unterbreiten,</li>
+        <li>die Kontaktaufnahme zeitnah – in der Regel innerhalb weniger Minuten bis Stunden nach deiner Eintragung – erfolgt.</li>
+      </ul>
+    </div>
+    <p>
+      Finavio selbst erbringt keine Finanzberatungs- oder Vermittlungsleistung im Sinne des KWG oder der GewO. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: <a href="mailto:info@finaviofinance.com">info@finaviofinance.com</a>. Bereits weitergegebene Daten können beim jeweiligen Partnerunternehmen nicht rückwirkend gelöscht werden – hierfür wende dich bitte direkt an das jeweilige Unternehmen, das dich kontaktiert hat.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Erhobene Daten und Zwecke</h2>
+    <ul>
+      <li><strong>Kontaktdaten:</strong> Name, E-Mail-Adresse, Telefonnummer</li>
+      <li><strong>Angaben zur finanziellen Situation:</strong> Informationen, die du freiwillig im Formular angibst</li>
+      <li><strong>Technische Daten:</strong> IP-Adresse, Browsertyp, Betriebssystem, Zugriffszeiten</li>
+      <li><strong>Nutzungs- und Trackingdaten:</strong> Seitenbesuche, Klickverhalten, Conversion-Events (durch Werbe- und Analyse-Tools)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Eintragungsformular (OnePage)</h2>
+    <p>
+      Für die Erfassung deiner Anfragen nutzen wir ein Anfrageformular direkt auf dieser Website (<strong>finaviofinance.com</strong>). Die dort eingegebenen Daten (Thema deiner Anfrage, Name, Telefonnummer und E-Mail-Adresse) werden beim Absenden über eine verschlüsselte Schnittstelle (Webhook) an unser CRM-System (siehe Abschnitt&nbsp;8) übermittelt und anschließend in Echtzeit an die Finavio-Partnerunternehmen weitergegeben (siehe Abschnitt&nbsp;3).
+    </p>
+    <p>
+      Die Eingabe erfolgt freiwillig. Erst durch das Abschicken des Formulars und das aktive Setzen des Einwilligungs-Häkchens erteilst du die Einwilligung zur Weitergabe deiner Daten und zur telefonischen Kontaktaufnahme durch die Partnerunternehmen. Ohne diese Einwilligung können wir deine Anfrage nicht bearbeiten.
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Werbung & Tracking</h2>
+    <p>Wir setzen folgende Werbeplattformen und Tracking-Tools ein, um unsere Werbemaßnahmen zu messen und zu optimieren. Diese Tools werden ausschließlich nach deiner ausdrücklichen Einwilligung über unser Consent-Banner geladen. Rechtsgrundlage ist deine Einwilligung gemäß § 25 Abs. 1 TTDSG i. V. m. Art. 6 Abs. 1 lit. a DSGVO. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: <a href="#" data-fv-consent-open>Cookie-Einstellungen öffnen</a>.</p>
+
+    <div class="tool-card">
+      <strong>Meta Ads (Facebook & Instagram)</strong>
+      <p>Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Irland. Wir verwenden den Meta-Pixel, um Conversions zu messen und Zielgruppen für Werbeanzeigen auf Facebook und Instagram zu erstellen. Dabei können Daten in die USA übertragen werden. Opt-out: <a href="https://www.facebook.com/settings?tab=ads" target="_blank">facebook.com/settings</a> · <a href="https://www.aboutads.info/choices/" target="_blank">aboutads.info</a></p>
+    </div>
+
+    <div class="tool-card">
+      <strong>Google Ads & Google Analytics</strong>
+      <p>Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Wir nutzen Google Ads zur Schaltung von Suchanzeigen sowie Google Analytics zur Analyse des Nutzerverhaltens auf unserer Website. Google kann Daten in die USA übertragen. Opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out</a> · <a href="https://adssettings.google.com" target="_blank">Google Anzeigeneinstellungen</a></p>
+    </div>
+
+    <div class="tool-card">
+      <strong>TikTok Ads</strong>
+      <p>TikTok Technology Limited, 10 Earlsfort Terrace, Dublin 2, Irland. Wir verwenden das TikTok Pixel, um den Erfolg unserer Werbeanzeigen auf TikTok zu messen und Retargeting-Zielgruppen zu erstellen. Dabei können Daten in Drittländer übertragen werden. Datenschutzinfos: <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank">tiktok.com/legal/privacy-policy</a></p>
+    </div>
+
+    <div class="tool-card">
+      <strong>YouTube Ads (Google)</strong>
+      <p>Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Über YouTube Ads schalten wir Videoanzeigen auf YouTube. Google setzt dabei Cookies und verarbeitet Nutzungsdaten zur Messung der Anzeigenwirkung. Opt-out: <a href="https://adssettings.google.com" target="_blank">Google Anzeigeneinstellungen</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Terminbuchung & Kommunikation</h2>
+
+    <div class="tool-card">
+      <strong>Calendly</strong>
+      <p>Calendly LLC, 271 17th St NW, Atlanta, GA 30363, USA. Für die Terminbuchung nutzen wir Calendly. Dabei werden Name, E-Mail-Adresse und ggf. weitere von dir angegebene Daten an Calendly übertragen und in den USA verarbeitet. Grundlage: Standardvertragsklauseln (Art. 46 DSGVO). Datenschutzinfos: <a href="https://calendly.com/privacy" target="_blank">calendly.com/privacy</a></p>
+    </div>
+
+    <div class="tool-card">
+      <strong>Zoom</strong>
+      <p>Zoom Video Communications, Inc., 55 Almaden Blvd., Suite 600, San Jose, CA 95113, USA. Für Beratungsgespräche und interne Meetings nutzen wir Zoom. Bei der Nutzung werden Verbindungsdaten sowie Gesprächsinhalte verarbeitet. Daten können in die USA übertragen werden. Grundlage: Standardvertragsklauseln. Datenschutzinfos: <a href="https://zoom.us/de-de/privacy.html" target="_blank">zoom.us/privacy</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. Automatisierung & CRM</h2>
+
+    <div class="tool-card">
+      <strong>Zapier</strong>
+      <p>Zapier Inc., 548 Market St #62411, San Francisco, CA 94104, USA. Wir nutzen Zapier zur Automatisierung von Arbeitsabläufen, etwa zur Weiterleitung von Formulardaten an unser CRM. Dabei können personenbezogene Daten (Name, E-Mail, Telefon) in die USA übertragen werden. Grundlage: Standardvertragsklauseln. Datenschutzinfos: <a href="https://zapier.com/privacy" target="_blank">zapier.com/privacy</a></p>
+    </div>
+
+    <div class="tool-card">
+      <strong>Bitrix24 (CRM)</strong>
+      <p>Bitrix, Inc., 901 N. Pitt Str., Suite 325, Alexandria, VA 22314, USA. Zur Verwaltung von Kundenanfragen und Lead-Daten nutzen wir Bitrix24 als CRM-System. Deine Kontaktdaten (Name, E-Mail, Telefon, Angaben zu deiner finanziellen Situation) werden dort gespeichert und verwaltet. Daten können in die USA übertragen werden. Grundlage: Standardvertragsklauseln. Datenschutzinfos: <a href="https://www.bitrix24.de/privacy/" target="_blank">bitrix24.de/privacy</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>9. Google Fonts</h2>
+    <p>
+      Diese Website nutzt Google Fonts zur Darstellung von Schriftarten. Beim Seitenaufruf wird deine IP-Adresse an Google übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Infos: <a href="https://policies.google.com/privacy" target="_blank">Google Datenschutzerklärung</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Hosting & Server-Logs</h2>
+    <p>
+      Diese Website wird auf Servern in der Europäischen Union gehostet. Beim Aufruf werden technische Daten (IP-Adresse, Zugriffszeit, aufgerufene URL) in Server-Logfiles gespeichert und nach spätestens 30 Tagen gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
+    </p>
+  </section>
+
+  <section>
+    <h2>10a. Datenübermittlung in Drittländer (USA)</h2>
+    <div class="warning-box">
+      <p>
+        Verantwortliche Stelle ist die LIONS PERFORMANCE DIGITAL LLC mit Sitz in Florida, USA. Personenbezogene Daten, die du über diese Website übermittelst, werden daher regelmäßig in die USA übertragen und dort verarbeitet. Die USA gelten datenschutzrechtlich als Drittland im Sinne der DSGVO. Wir setzen geeignete Garantien gemäß Art. 46 DSGVO (insbesondere EU-Standardvertragsklauseln) ein, um ein angemessenes Datenschutzniveau sicherzustellen. Mit deiner Anfrage über diese Website willigst du ausdrücklich gemäß Art. 49 Abs. 1 lit. a DSGVO in die Übermittlung deiner Daten in die USA ein.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>11. Deine Rechte</h2>
+    <ul>
+      <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
+      <li><strong>Berichtigung</strong> (Art. 16 DSGVO)</li>
+      <li><strong>Löschung</strong> (Art. 17 DSGVO)</li>
+      <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+      <li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li>
+      <li><strong>Widerruf der Einwilligung</strong> (Art. 7 Abs. 3 DSGVO) – jederzeit mit Wirkung für die Zukunft</li>
+    </ul>
+    <p>Zur Ausübung deiner Rechte: <a href="mailto:info@finaviofinance.com">info@finaviofinance.com</a></p>
+  </section>
+
+  <section>
+    <h2>12. Beschwerderecht</h2>
+    <p>
+      Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Da die LIONS PERFORMANCE DIGITAL LLC keine Niederlassung in der EU unterhält, kannst du dich an die Datenschutz-Aufsichtsbehörde deines Wohnsitzlandes wenden – innerhalb Deutschlands ist dies in der Regel die Aufsichtsbehörde deines Bundeslandes (eine Übersicht findest du unter <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank">bfdi.bund.de</a>).
+    </p>
+  </section>
+
+  <section>
+    <h2>13. Speicherdauer</h2>
+    <p>
+      Wir speichern deine Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Anfragedaten werden nach Weitergabe an den Partnerexperten spätestens nach 24 Monaten gelöscht.
+    </p>
+  </section>
+
+  <section>
+    <h2>14. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.
+    </p>
+  </section>
+
+</main>
+
+<footer class="mini-footer">
+  © 2026 LIONS PERFORMANCE DIGITAL LLC · 23160 Fashion Dr, Ste 220 · Estero, FL 33928 · USA &nbsp;|&nbsp;
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <a href="#" data-fv-consent-open>Cookie-Einstellungen</a>
+  <a href="start.html">← Zurück zur Startseite</a>
+</footer>
+
+<script src="lead-modal.js"></script>
+<script src="consent.js"></script>
+</body>
+</html>
